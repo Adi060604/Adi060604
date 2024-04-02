@@ -1,0 +1,16 @@
+ def deckRevealedIncreasing(deck):
+        result=[]
+        deck.sort()
+        n=len(deck)
+        for i in reversed(deck):
+            if result:
+                last_card=result.pop()
+                result.insert(0,last_card)
+            result.insert(0,i)
+        return list(result)
+
+deck=list(map(int,input().split()))
+print(deckRevealedIncreasing(deck))
+
+Input: deck = [17,13,11,2,3,5,7]
+Output: [2,13,3,11,5,17,7]
