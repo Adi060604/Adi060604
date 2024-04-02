@@ -1,0 +1,13 @@
+#Find the winner of the circular queue
+def findTheWinner(n,k):
+    l=[]
+    c=list(range(1,n+1))
+    index=0
+    while (len(c)>1):
+          index=(index+k-1)%len(c)
+          c.pop(index)
+    return c[0]
+
+n,k=map(int,input().split())
+Input: n = 5, k = 2
+Output: 3
